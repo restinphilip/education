@@ -1,4 +1,4 @@
- <?php
+<?php
     include 'functions.php';
     if(empty($_SESSION['suuser']))
     {
@@ -39,7 +39,21 @@
     }
  </script>
  <!-- Content Wrapper. Contains page content -->
-
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Subjects List</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
@@ -64,7 +78,26 @@
                         
                     </tr>
                     </thead>
-             
+                    <tbody>
+                       <?php
+                        $i = 1;
+                        while($row = mysqli_fetch_array($allSubjects))
+                        {
+                          ?>
+                          <tr>
+                            <td><?php echo '('.$i.'.)'; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td>
+                              <button type="button" class="btn btn-primary" onclick="addChapter(<?php echo $row['id']; ?>)">Add Chapter</button>
+                              <button type="button" class="btn btn-primary" onclick="updateSubject(<?php echo $row['id']; ?>)">Update Subject</button>
+                              <button type="button" class="btn btn-primary" onclick="deleteSubject(<?php echo $row['id']; ?>)">Delete Subject</button>
+                            </td>
+                          </tr>
+                          <?php
+                          $i++;
+                        }
+                       ?>
+                    </tbody>
                 </table>
 
               <!-- content end ---->
