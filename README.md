@@ -23,7 +23,7 @@
 
 # Javascript often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.
 
-# AJAX is an acronym for Asynchronous JavaScript and XML. AJAX is an acronym for Asynchronous JavaScript and XML. AJAX is an acronym for Asynchronous JavaScript and XML.
+# AJAX is an acronym for Asynchronous JavaScript and XML.
 
 # This project has two parts one is Front End, which can be seen by users who are using the website. The other part is Back End, which is the server side of the website. And it will be used by admin to control the website. This website is regrading the education system in which user registers himself and after logging in the website he can read the information about topics of different subjects like Science, Mathematics, Geography, history etc. This website used PHP to provide response to the requests of the users and used MySQL to store the information regarding users, subjects, chapters and topics.
 
