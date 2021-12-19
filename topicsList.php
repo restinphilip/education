@@ -73,6 +73,32 @@
                         
                     </tr>
                     </thead>
+                    <tbody>
+                    <?php
+                        $i = 1;
+                        while($row = mysqli_fetch_array($allTopics))
+                        {
+                          ?>
+                          <tr>
+                            <td><?php echo '('.$i.'.)'; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td>
+                              <?php
+                                $chapterData = getChapterDataById($row['chapter_id']);
+                                $chapterData = mysqli_fetch_array($chapterData);
+                                echo $chapterData['name'];
+                              ?>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-primary" onclick="updateTopic(<?php echo $row['id']; ?>)">Update Topic</button>
+                              <button type="button" class="btn btn-primary" onclick="deleteTopic(<?php echo $row['id']; ?>)">Delete Topic</button>
+                            </td>
+                          </tr>
+                          <?php
+                          $i++;
+                        }
+                       ?>
+                    </tbody>
                 </table>
 
               <!-- content end ---->
